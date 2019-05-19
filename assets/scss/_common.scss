@@ -1,0 +1,44 @@
+html {
+    overflow-y: scroll;
+    font-size: $font-size;
+}
+
+body {
+    font-size: 1rem;
+    font-family: $font-main;
+}
+
+a {
+    color: $color-main;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $color-accent;
+    }
+}
+
+h1 {
+    margin: -7px 0 ($gap * 3);
+    font-family: $font-header;
+    position: relative;
+    overflow: hidden;
+    
+    @include xs-min {
+        font-size: 3rem;
+    }
+
+    @include xs {
+        font-size: 2rem;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        border-bottom: 3px solid rgba(lighten($color-accent, 15%), 0.7);
+        margin-left: 10px;
+        bottom: 8px;
+    }
+}
+
