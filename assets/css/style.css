@@ -107,6 +107,11 @@ body {
   font-family: "PT Sans", sans-serif;
 }
 
+section {
+  overflow: hidden;
+  position: relative;
+}
+
 a {
   color: #165690;
 }
@@ -120,7 +125,6 @@ h1 {
   margin: -7px 0 45px;
   font-family: "PT Serif", serif;
   position: relative;
-  overflow: hidden;
 }
 
 @media (min-width: 576px) {
@@ -136,6 +140,42 @@ h1 {
 }
 
 h1::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  border-bottom: 3px solid rgba(240, 173, 79, 0.7);
+  margin-left: 10px;
+  bottom: 8px;
+}
+
+h2 {
+  margin: 60px 0 45px 45px;
+  font-family: "PT Serif", serif;
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+h2::before {
+  position: absolute;
+  left: 0;
+  margin: 10px 0 0 -45px;
+  content: "";
+  width: 25px;
+  border-bottom: 3px solid rgba(240, 173, 79, 0.7);
+}
+
+h2::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -203,6 +243,39 @@ h1::after {
 }
 
 .new-films-item:hover .caption {
+  color: #ffffff;
+}
+
+.top-week .row {
+  margin-right: -7.5px;
+  margin-left: -7.5px;
+}
+
+.top-week-item {
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+.top-week-item .thumbnail {
+  -webkit-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+.top-week-item .caption {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.top-week-item:hover .thumbnail {
+  background-color: #df8a13;
+  border-color: #df8a13;
+}
+
+.top-week-item:hover .caption {
   color: #ffffff;
 }
 

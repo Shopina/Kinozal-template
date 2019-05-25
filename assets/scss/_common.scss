@@ -8,6 +8,11 @@ body {
     font-family: $font-main;
 }
 
+section {
+    overflow: hidden;
+    position: relative;
+}
+
 a {
     color: $color-main;
 
@@ -22,7 +27,6 @@ h1 {
     margin: -7px 0 ($gap * 3);
     font-family: $font-header;
     position: relative;
-    overflow: hidden;
     
     @include xs-min {
         font-size: 3rem;
@@ -30,6 +34,38 @@ h1 {
 
     @include xs {
         font-size: 2rem;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        border-bottom: 3px solid rgba(lighten($color-accent, 15%), 0.7);
+        margin-left: 10px;
+        bottom: 8px;
+    }
+}
+
+h2 {
+    margin: ($gap * 4) 0 ($gap * 3) ($gap * 3);
+    font-family: $font-header;
+    position: relative;
+    
+    @include xs-min {
+        font-size: 2.5rem;
+    }
+
+    @include xs {
+        font-size: 1.75rem;
+    }
+
+    &::before {
+        position: absolute;
+        left: 0;
+        margin: 10px 0 0 ($gap * -3);
+        content: "";
+        width: 25px;
+        border-bottom: 3px solid rgba(lighten($color-accent, 15%), 0.7);
     }
 
     &::after {
